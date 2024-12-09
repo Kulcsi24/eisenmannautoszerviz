@@ -114,18 +114,8 @@
         }
 
         .content#services {
-            background-color: #2B3D63; /* Sötétebb kék */
+            background-color: #2B3D63;
             color: white;
-        }
-
-        .content#about {
-            background-color: #3A4C73; /* Középkék */
-            color: white;
-        }
-
-        .content#contact {
-            background-color: #A9B7D5; /* Világoskék */
-            color: black;
         }
 
         .service-container {
@@ -142,6 +132,17 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
+            color: #333;
+        }
+
+        .service-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
         }
 
         .service-box:hover {
@@ -180,16 +181,6 @@
         .contact-box:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 10px #FFD700;
-        }
-
-        .contact-box.email,
-        .contact-box.address {
-            font-size: 1.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            height: 100px;
         }
 
         .contact-title, .about-title {
