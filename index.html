@@ -114,8 +114,18 @@
         }
 
         .content#services {
-            background-color: #f7f7f7;
-            padding: 50px;
+            background-color: #2B3D63; /* Sötétebb kék */
+            color: white;
+        }
+
+        .content#about {
+            background-color: #3A4C73; /* Középkék */
+            color: white;
+        }
+
+        .content#contact {
+            background-color: #A9B7D5; /* Világoskék */
+            color: black;
         }
 
         .service-container {
@@ -137,6 +147,16 @@
         .service-box:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 10px #FFD700;
+        }
+
+        .about-description {
+            background-color: #ffffff;
+            border: 2px solid #FFD700;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            color: #333;
+            font-size: 1.2em;
         }
 
         .contact-container {
@@ -162,10 +182,6 @@
             box-shadow: 0 4px 10px #FFD700;
         }
 
-        .contact-box p {
-            margin: 10px 0;
-        }
-
         .contact-box.email,
         .contact-box.address {
             font-size: 1.5em;
@@ -176,7 +192,7 @@
             height: 100px;
         }
 
-        .contact-title {
+        .contact-title, .about-title {
             font-size: 3em;
             font-weight: 700;
             margin-bottom: 30px;
@@ -232,8 +248,10 @@
 </div>
 
 <div class="content" id="about">
-    <h2>Rólunk</h2>
-    <p>Az Eisenmann Autószerviz története évtizedekre nyúlik vissza. Balázs, az egyik alapító, gyerekkorától kezdve szoros kapcsolatban állt az autókkal, hiszen nagypapája tapasztalt autószerelőként inspirálta őt. Már fiatalon megszerette az autók világát, és osztálytársával, Antallal együtt úgy döntöttek, hogy hobbijukat komolyabb szintre emelik. Kitartó munkával és elkötelezettséggel építették fel szervizünket, amely mára a megbízhatóság és a minőség szinonimájává vált. Szenvedélyünk az autók, és célunk, hogy ügyfeleink járműve mindig a legjobb kezekben legyen.</p>
+    <h2 class="about-title">Rólunk</h2>
+    <div class="about-description">
+        <p>Az Eisenmann Autószerviz története évtizedekre nyúlik vissza. Balázs, az egyik alapító, gyerekkorától kezdve szoros kapcsolatban állt az autókkal, hiszen nagypapája tapasztalt autószerelőként inspirálta őt. Már fiatalon megszerette az autók világát, és osztálytársával, Antallal együtt úgy döntöttek, hogy hobbijukat komolyabb szintre emelik. Kitartó munkával és elkötelezettséggel építették fel szervizünket, amely mára a megbízhatóság és a minőség szinonimájává vált. Szenvedélyünk az autók, és célunk, hogy ügyfeleink járműve mindig a legjobb kezekben legyen.</p>
+    </div>
 </div>
 
 <div class="content" id="contact">
