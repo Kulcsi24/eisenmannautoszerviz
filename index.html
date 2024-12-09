@@ -12,7 +12,7 @@
             padding: 0;
             color: #333;
             overflow-x: hidden;
-            scroll-behavior: smooth; /* Globális lassított görgetés */
+            scroll-behavior: smooth;
         }
 
         header {
@@ -65,6 +65,28 @@
 
         .hero p {
             font-size: 1.2em;
+        }
+
+        .hero button {
+            background-color: #FFD700;
+            color: #2B3D63;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero button:active {
+            transform: scale(1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .content {
@@ -154,9 +176,6 @@
         <div class="service">
             <h3>Klímaszerviz</h3>
             <p>Hatékony klímarendszer karbantartás és tisztítás.</p>
-               <div class="service">
-            <h3>Karosszérialakatolás</h3>
-            <p>Hatékony, Profi karosszérialakatolás</p>
         </div>
     </div>
 </div>
@@ -170,8 +189,8 @@
     <h2>Kapcsolat</h2>
     <p>Keressen minket az alábbi elérhetőségeken:</p>
     <ul>
-        <li>Telefon: +36 20 350 5837 Mihalek Balázs </li>
-        <li>Telefon: +36 20 362 6820 Pozsgai Antal Gábor </li>
+        <li>Telefon: +36 20 350 5837 Mihalek Balázs</li>
+        <li>Telefon: +36 20 362 6820 Pozsgai Antal Gábor</li>
         <li>Email: info@eisenmann.hu</li>
         <li>Cím: Dunakeszi, Hársfa utca 23.</li>
     </ul>
@@ -182,14 +201,11 @@
 </footer>
 
 <script>
-    // Lassú görgetés manuális vezérlése
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-
-            // Simán görgessük az elemhez
             targetElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -200,10 +216,8 @@
     document.addEventListener('DOMContentLoaded', () => {
         const services = document.querySelectorAll('.service');
         const sections = document.querySelectorAll('.content h2');
-        
-        const options = {
-            threshold: 0.2
-        };
+
+        const options = { threshold: 0.2 };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
