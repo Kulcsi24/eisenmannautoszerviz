@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eisenmann Autószerviz Budapest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Modern, vastagabb betűtípus */
+            font-size: 18px; /* Nagyobb alap betűméret */
             margin: 0;
             padding: 0;
             color: #333;
@@ -26,19 +27,19 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transform: translateY(-100%);
-            animation: slideDown 1s forwards ease-in-out;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 30px; /* Távolság a menüpontok között */
         }
 
         nav a {
             text-decoration: none;
             color: white;
-            font-weight: 500;
+            font-size: 20px; /* Nagyobb betűméret */
+            font-weight: 700; /* Vastagabb szöveg */
+            text-transform: uppercase; /* Nagybetűs megjelenítés */
             transition: color 0.3s;
         }
 
@@ -54,39 +55,45 @@
             background: url('https://c4.wallpaperflare.com/wallpaper/522/4/864/abstract-car-sports-car-parts-mechanics-ferrari-exploded-view-diagram-composite-wallpaper-preview.jpg') no-repeat center center/cover;
             color: white;
             text-align: center;
-            opacity: 0;
-            animation: fadeIn 2s forwards ease-in-out 0.5s;
+        }
+
+        .hero div {
+            background-color: rgba(0, 0, 0, 0.7); /* Fekete háttér átlátszósággal */
+            padding: 20px 30px;
+            border-radius: 10px;
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 3.5em; /* Nagyobb főcím */
             margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.5em; /* Nagyobb alcím */
         }
 
         .hero button {
-            background-color: #FFD700;
-            color: #2B3D63;
-            font-size: 1.2em;
+            background-color: white;
+            color: black;
+            font-size: 1.5em;
             padding: 15px 30px;
             border: none;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .hero button:hover {
+            background-color: #f1f1f1; /* Enyhén szürkébb árnyalat hover állapotban */
             transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
         .hero button:active {
             transform: scale(1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .content {
@@ -95,27 +102,9 @@
         }
 
         .content h2 {
-            font-size: 2em;
+            font-size: 2.5em; /* Nagyobb alcímek */
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .service-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .service {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: transform 0.3s, opacity 0.3s;
+            font-weight: 700;
         }
 
         footer {
@@ -123,19 +112,6 @@
             color: white;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
-        }
-
-        @keyframes slideDown {
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            100% {
-                opacity: 1;
-            }
         }
     </style>
 </head>
@@ -160,80 +136,12 @@
 
 <div class="content" id="services">
     <h2>Szolgáltatásaink</h2>
-    <div class="service-container">
-        <div class="service">
-            <h3>Olajcsere</h3>
-            <p>Professzionális olajcsere, amely biztosítja a motor optimális működését.</p>
-        </div>
-        <div class="service">
-            <h3>Fékjavítás</h3>
-            <p>Biztonságos és gyors fékjavítás szakértő csapatunktól.</p>
-        </div>
-        <div class="service">
-            <h3>Diagnosztika</h3>
-            <p>Teljes körű számítógépes diagnosztika a jármű minden részéhez.</p>
-        </div>
-        <div class="service">
-            <h3>Klímaszerviz</h3>
-            <p>Hatékony klímarendszer karbantartás és tisztítás.</p>
-        </div>
-    </div>
-</div>
-
-<div class="content" id="about">
-    <h2>Rólunk</h2>
-    <p>Az Eisenmann Autószerviz tapasztalt szakemberei garantálják, hogy járműve minden esetben a legjobb kezekben van. Elkötelezettek vagyunk a minőségi szolgáltatások iránt, hogy ügyfeleink teljes elégedettséget tapasztaljanak.</p>
-</div>
-
-<div class="content" id="contact">
-    <h2>Kapcsolat</h2>
-    <p>Keressen minket az alábbi elérhetőségeken:</p>
-    <ul>
-        <li>Telefon: +36 20 350 5837 Mihalek Balázs</li>
-        <li>Telefon: +36 20 362 6820 Pozsgai Antal Gábor</li>
-        <li>Email: info@eisenmann.hu</li>
-        <li>Cím: Dunakeszi, Hársfa utca 23.</li>
-    </ul>
 </div>
 
 <footer>
     <p>&copy; 2024 Eisenmann Autószerviz. Minden jog fenntartva.</p>
 </footer>
 
-<script>
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const services = document.querySelectorAll('.service');
-        const sections = document.querySelectorAll('.content h2');
-
-        const options = { threshold: 0.2 };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, options);
-
-        sections.forEach(section => observer.observe(section));
-        services.forEach(service => {
-            observer.observe(service);
-        });
-    });
-</script>
-
 </body>
 </html>
+
