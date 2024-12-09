@@ -48,6 +48,7 @@
             font-size: 20px;
             font-weight: 700;
             text-transform: uppercase;
+            cursor: pointer;
         }
 
         .hero {
@@ -76,34 +77,21 @@
             color: white;
         }
 
-        .content#about {
-            background-color: #3A4C73;
-            color: white;
-        }
-
-        .content#contact {
-            background-color: #A9B7D5;
-            color: black;
-        }
-
-        .service-container, .contact-container {
+        .service-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
-        .service-box, .contact-box {
+        .service-box {
             background-color: #ffffff;
             border-radius: 10px;
             padding: 20px;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            font-weight: 700; /* Vastag betűtípus az elérhetőségekhez */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            color: #333;
         }
 
         .service-box h3 {
@@ -116,7 +104,12 @@
             font-size: 1.2em;
             line-height: 1.6;
             margin: 0;
-            font-weight: 400; /* Szöveges leírás normál vastagság */
+            font-weight: 400;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px #FFD700;
         }
 
         footer {
@@ -155,23 +148,16 @@
                 padding: 30px 15px;
             }
 
-            .service-box, .contact-box {
-                height: auto;
+            .service-box {
                 padding: 15px;
-                font-size: 1em; /* Alkalmazkodik a mobil nézethez */
             }
 
-            .service-box h3, .contact-box p {
-                font-size: 1.2em;
+            .service-box h3 {
+                font-size: 1.5em;
             }
 
-            .about-description {
+            .service-box p {
                 font-size: 1em;
-                padding: 20px;
-            }
-
-            .contact-title, .about-title {
-                font-size: 2em;
             }
         }
     </style>
@@ -181,9 +167,9 @@
 <header>
     <h1 class="brand">Eisenmann</h1>
     <nav>
-        <a href="#services">Szolgáltatások</a>
-        <a href="#about">Rólunk</a>
-        <a href="#contact">Kapcsolat</a>
+        <a href="#services" class="scroll-link">Szolgáltatások</a>
+        <a href="#about" class="scroll-link">Rólunk</a>
+        <a href="#contact" class="scroll-link">Kapcsolat</a>
     </nav>
 </header>
 
@@ -246,6 +232,23 @@
 <footer>
     <p>&copy; 2024 Eisenmann Autószerviz. Minden jog fenntartva.</p>
 </footer>
+
+<script>
+    // Lassú görgetés az oldal szekcióira
+    document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
