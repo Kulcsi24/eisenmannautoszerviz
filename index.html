@@ -107,6 +107,29 @@
             font-weight: 700;
         }
 
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service h3 {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        .service p {
+            font-size: 1em;
+        }
+
         footer {
             background-color: #2B3D63;
             color: white;
@@ -136,6 +159,24 @@
 
 <div class="content" id="services">
     <h2>Szolgáltatásaink</h2>
+    <div class="service-container">
+        <div class="service">
+            <h3>Olajcsere</h3>
+            <p>Professzionális olajcsere, amely biztosítja a motor optimális működését.</p>
+        </div>
+        <div class="service">
+            <h3>Fékjavítás</h3>
+            <p>Biztonságos és gyors fékjavítás szakértő csapatunktól.</p>
+        </div>
+        <div class="service">
+            <h3>Diagnosztika</h3>
+            <p>Teljes körű számítógépes diagnosztika a jármű minden részéhez.</p>
+        </div>
+        <div class="service">
+            <h3>Klímaszerviz</h3>
+            <p>Hatékony klímarendszer karbantartás és tisztítás.</p>
+        </div>
+    </div>
 </div>
 
 <div class="content" id="about">
@@ -160,5 +201,4 @@
 
 </body>
 </html>
-
 
