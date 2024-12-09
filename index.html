@@ -8,12 +8,11 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            font-size: 18px; /* Alap betűméret */
+            font-size: 18px;
             margin: 0;
             padding: 0;
             color: #333;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         header {
@@ -37,7 +36,7 @@
         nav a {
             text-decoration: none;
             color: white;
-            font-size: 20px; /* Nagyobb betűméret */
+            font-size: 20px;
             font-weight: 700;
             text-transform: uppercase;
             transition: color 0.3s;
@@ -58,13 +57,13 @@
         }
 
         .hero div {
-            background-color: rgba(0, 0, 0, 0.7); /* Fekete háttér átlátszósággal */
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 30px 50px;
             border-radius: 10px;
         }
 
         .hero h1 {
-            font-size: 4em; /* Nagyobb főcím */
+            font-size: 4em;
             margin-bottom: 20px;
             font-weight: 700;
         }
@@ -77,9 +76,9 @@
         .hero button {
             background-color: white;
             color: black;
-            font-size: 1.8em; /* Nagyobb gomb szöveg */
-            font-weight: 700; /* Vastagabb betű */
-            padding: 20px 40px; /* Nagyobb gombméret */
+            font-size: 1.8em;
+            font-weight: 700;
+            padding: 20px 40px;
             border: none;
             border-radius: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -93,23 +92,18 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
-        .hero button:active {
-            transform: scale(1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
         .content {
             padding: 50px;
             text-align: center;
         }
 
         .content#services {
-            background-color: #f7f7f7; /* Világos szürkés háttér */
+            background-color: #f7f7f7;
             padding: 50px;
         }
 
         .content h2 {
-            font-size: 2.5em; /* Nagyobb alcímek */
+            font-size: 2.5em;
             margin-bottom: 20px;
             font-weight: 700;
         }
@@ -128,15 +122,6 @@
             text-align: center;
         }
 
-        .service h3 {
-            font-size: 1.5em;
-            font-weight: 700;
-        }
-
-        .service p {
-            font-size: 1em;
-        }
-
         footer {
             background-color: #2B3D63;
             color: white;
@@ -150,9 +135,9 @@
 <header>
     <h1>Eisenmann</h1>
     <nav>
-        <a href="#services">Szolgáltatások</a>
-        <a href="#about">Rólunk</a>
-        <a href="#contact">Kapcsolat</a>
+        <a href="#services" class="scroll-link">Szolgáltatások</a>
+        <a href="#about" class="scroll-link">Rólunk</a>
+        <a href="#contact" class="scroll-link">Kapcsolat</a>
     </nav>
 </header>
 
@@ -166,48 +151,39 @@
 
 <div class="content" id="services">
     <h2>Szolgáltatásaink</h2>
-    <div class="service-container">
-        <div class="service">
-            <h3>Olajcsere</h3>
-            <p>Professzionális olajcsere, amely biztosítja a motor optimális működését.</p>
-        </div>
-        <div class="service">
-            <h3>Fékjavítás</h3>
-            <p>Biztonságos és gyors fékjavítás szakértő csapatunktól.</p>
-        </div>
-        <div class="service">
-            <h3>Diagnosztika</h3>
-            <p>Teljes körű számítógépes diagnosztika a jármű minden részéhez.</p>
-        </div>
-        <div class="service">
-            <h3>Klímaszerviz</h3>
-            <p>Hatékony klímarendszer karbantartás és tisztítás.</p>
-        </div>
-    </div>
+    <!-- Szolgáltatások tartalom -->
 </div>
 
 <div class="content" id="about">
     <h2>Rólunk</h2>
-    <p>Az Eisenmann Autószerviz tapasztalt szakemberei garantálják, hogy járműve minden esetben a legjobb kezekben van. Elkötelezettek vagyunk a minőségi szolgáltatások iránt, hogy ügyfeleink teljes elégedettséget tapasztaljanak.</p>
+    <!-- Rólunk tartalom -->
 </div>
 
 <div class="content" id="contact">
     <h2>Kapcsolat</h2>
-    <p>Keressen minket az alábbi elérhetőségeken:</p>
-    <ul>
-        <li>Telefon: +36 20 350 5837 Mihalek Balázs</li>
-        <li>Telefon: +36 20 362 6820 Pozsgai Antal Gábor</li>
-        <li>Email: info@eisenmann.hu</li>
-        <li>Cím: Dunakeszi, Hársfa utca 23.</li>
-    </ul>
+    <!-- Kapcsolat tartalom -->
 </div>
 
 <footer>
     <p>&copy; 2024 Eisenmann Autószerviz. Minden jog fenntartva.</p>
 </footer>
 
+<script>
+    // Lassú görgetés JavaScript
+    document.querySelectorAll('.scroll-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
-
-</html>
-
