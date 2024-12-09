@@ -28,6 +28,22 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
+        .brand {
+            font-size: 3em;
+            font-weight: 900;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .brand:hover {
+            transform: scale(1.1);
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+        }
+
         nav {
             display: flex;
             gap: 30px;
@@ -131,6 +147,27 @@
             font-size: 1em;
         }
 
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
         footer {
             background-color: #2B3D63;
             color: white;
@@ -142,7 +179,7 @@
 <body>
 
 <header>
-    <h1>Eisenmann</h1>
+    <h1 class="brand">Eisenmann</h1>
     <nav>
         <a href="#services" class="scroll-link">Szolgáltatások</a>
         <a href="#about" class="scroll-link">Rólunk</a>
@@ -182,18 +219,31 @@
 
 <div class="content" id="about">
     <h2>Rólunk</h2>
-    <p>Az Eisenmann Autószerviz története hosszú időre nyúlik vissza. Balázs, az egyik alapító, gyerekkorától kezdve szoros kapcsolatban állt az autókkal, hiszen nagypapája tapasztalt autószerelőként inspirálta őt. Már fiatalon megszerette az autók világát, és osztálytársával, Gabival együtt úgy döntöttek, hogy hobbijukat komolyabb szintre emelik. Kitartó munkával és elkötelezettséggel építették fel szervizünket, amely mára a megbízhatóság és a minőség szinonimájává vált. Szenvedélyünk az autók, és célunk, hogy ügyfeleink járműve mindig a legjobb kezekben legyen.</p>
+    <p>Az Eisenmann Autószerviz története évtizedekre nyúlik vissza. Balázs, az egyik alapító, gyerekkorától kezdve szoros kapcsolatban állt az autókkal, hiszen nagypapája tapasztalt autószerelőként inspirálta őt. Már fiatalon megszerette az autók világát, és osztálytársával, Antallal együtt úgy döntöttek, hogy hobbijukat komolyabb szintre emelik. Kitartó munkával és elkötelezettséggel építették fel szervizünket, amely mára a megbízhatóság és a minőség szinonimájává vált. Szenvedélyünk az autók, és célunk, hogy ügyfeleink járműve mindig a legjobb kezekben legyen.</p>
 </div>
 
 <div class="content" id="contact">
     <h2>Kapcsolat</h2>
-    <p>Keressen minket az alábbi elérhetőségeken:</p>
-    <ul>
-        <li>Telefon: +36 20 350 5837 Mihalek Balázs</li>
-        <li>Telefon: +36 20 362 6820 Pozsgai Antal Gábor</li>
-        <li>Email: info@eisenmann.hu</li>
-        <li>Cím: Dunakeszi, Hársfa utca 23.</li>
-    </ul>
+    <div class="contact-container">
+        <div class="contact-box">
+            <h3>Telefon</h3>
+            <p>+36 20 350 5837</p>
+            <p>Mihalek Balázs</p>
+        </div>
+        <div class="contact-box">
+            <h3>Telefon</h3>
+            <p>+36 20 362 6820</p>
+            <p>Pozsgai Antal Gábor</p>
+        </div>
+        <div class="contact-box">
+            <h3>Email</h3>
+            <p>info@eisenmann.hu</p>
+        </div>
+        <div class="contact-box">
+            <h3>Cím</h3>
+            <p>Dunakeszi, Hársfa utca 23.</p>
+        </div>
+    </div>
 </div>
 
 <footer>
@@ -201,7 +251,6 @@
 </footer>
 
 <script>
-    // Lassú görgetés JavaScript
     document.querySelectorAll('.scroll-link').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
