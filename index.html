@@ -97,12 +97,26 @@
             background-color: #ffffff;
             border-radius: 10px;
             padding: 20px;
-            height: 150px;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            font-weight: 700; /* Vastag betűtípus az elérhetőségekhez */
+        }
+
+        .service-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .service-box p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 400; /* Szöveges leírás normál vastagság */
         }
 
         footer {
@@ -144,10 +158,11 @@
             .service-box, .contact-box {
                 height: auto;
                 padding: 15px;
+                font-size: 1em; /* Alkalmazkodik a mobil nézethez */
             }
 
-            .contact-box {
-                font-size: 1em;
+            .service-box h3, .contact-box p {
+                font-size: 1.2em;
             }
 
             .about-description {
