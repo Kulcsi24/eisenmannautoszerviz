@@ -118,10 +118,25 @@
             padding: 50px;
         }
 
-        .content h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: 700;
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .service-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px #FFD700;
         }
 
         .contact-container {
@@ -135,15 +150,30 @@
             background-color: #ffffff;
             border-radius: 10px;
             padding: 20px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
-            transition: transform 0.3s ease, text-shadow 0.3s ease;
             font-weight: bold;
+            font-size: 1.2em;
         }
 
         .contact-box:hover {
             transform: scale(1.05);
-            text-shadow: 2px 2px 5px #FFD700; /* Sárga árnyék */
+            box-shadow: 0 4px 10px #FFD700;
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+        }
+
+        .contact-box.email,
+        .contact-box.address {
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100px;
         }
 
         .contact-title {
@@ -182,19 +212,19 @@
 <div class="content" id="services">
     <h2>Szolgáltatásaink</h2>
     <div class="service-container">
-        <div class="service">
+        <div class="service-box">
             <h3>Olajcsere</h3>
             <p>Professzionális olajcsere, amely biztosítja a motor optimális működését.</p>
         </div>
-        <div class="service">
+        <div class="service-box">
             <h3>Fékjavítás</h3>
             <p>Biztonságos és gyors fékjavítás szakértő csapatunktól.</p>
         </div>
-        <div class="service">
+        <div class="service-box">
             <h3>Diagnosztika</h3>
             <p>Teljes körű számítógépes diagnosztika a jármű minden részéhez.</p>
         </div>
-        <div class="service">
+        <div class="service-box">
             <h3>Klímaszerviz</h3>
             <p>Hatékony klímarendszer karbantartás és tisztítás.</p>
         </div>
@@ -217,10 +247,10 @@
             <p>+36 20 362 6820</p>
             <p>Pozsgai Antal Gábor</p>
         </div>
-        <div class="contact-box">
+        <div class="contact-box email">
             <p>info@eisenmann.hu</p>
         </div>
-        <div class="contact-box">
+        <div class="contact-box address">
             <p>Dunakeszi, Hársfa utca 23.</p>
         </div>
     </div>
